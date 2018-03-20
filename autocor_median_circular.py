@@ -3,6 +3,7 @@
 #Input Argument 1: file name with coordinate and expression alue
 #Input Argument 2: output file suffix
 #Output: Single file with autocorrelation in first column and coordinate in second column
+#The default is to compute correlations for all lags from 1-60000. To modify this, modify the variables MIN_LAG and MAX_LAG
 #################################
 
 import sys
@@ -34,8 +35,9 @@ txn2 = txn.groupby(txn.coord)[['value']].median()
 #for parallel processing
 num_cores = multiprocessing.cpu_count()
 
-MIN_LAG = 20000
-MAX_LAG = 40000
+##CHANGE THESE LINES TO MODIFY THE NUMBER OF LAGS TO TEST
+MIN_LAG = 1
+MAX_LAG = 60000
 
 LENGTH_GENOME = 4641652
 
