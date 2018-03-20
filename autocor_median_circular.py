@@ -50,7 +50,7 @@ MIN_LAG = 1
 MAX_LAG = 60000
 
 if args.min_lag:
-	MIN_lAG = int(args.min_lag)
+	MIN_LAG = int(args.min_lag)
 if args.max_lag:
 	MAX_LAG = int(args.max_lag)
 
