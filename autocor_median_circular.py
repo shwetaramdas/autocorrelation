@@ -1,11 +1,12 @@
 #################################
 #Author: Shweta Ramdas
-#Input Argument 1: file name with coordinate and expression alue
-#Input Argument 2: output file suffix
-#
+#necessary argument: --infile INFILE: file name with coordinate and expression alue
+#necessary argument: --outfileOUTFILE: output file suffix
+#Optional arguments:
+#--spearman: to compate spearman correlation
+#--min_lag : change the minimum lag
+#--max_lag : change the maximum lag
 #Output: Single file with autocorrelation (pearson) in first column and coordinate in second column
-#The default is to compute correlations for all lags from 1-60000. To modify this, modify the variables MIN_LAG and MAX_LAG
-#The default is to compute pearson correlation. 
 #################################
 
 import sys
@@ -38,17 +39,13 @@ txn = txn.drop_duplicates()
 txn.columns = ['coord', 'value']
 
 unique_coords = txn.coord.drop_duplicates()
-#txn2 = txn.set_index('coord')
 
 txn2 = txn.groupby(txn.coord)[['value']].median()
-
-#for i in unique_coords:
-#	txn2.value[i] = statistics.median(txn.value[txn.coord == i])
 
 #for parallel processing
 num_cores = multiprocessing.cpu_count()
 
-##CHANGE THESE LINES TO MODIFY THE NUMBER OF LAGS TO TEST
+#lags to compute
 MIN_LAG = 1
 MAX_LAG = 60000
 
