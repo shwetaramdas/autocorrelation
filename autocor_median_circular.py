@@ -1,3 +1,10 @@
+#################################
+Author: Shweta Ramdas
+Input Argument 1: file name with coordinate and expression alue
+Input Argument 2: output file suffix
+Output: Single file with autocorrelation in first column and coordinate in second column
+#################################
+
 import sys
 import numpy as np
 from pandas import Series
