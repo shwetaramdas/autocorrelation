@@ -1,6 +1,11 @@
 # autocorrelation
 Python script for auto-correlations in expression in a genome at different lags
 
+To cite:
+[![DOI](https://zenodo.org/badge/111421140.svg)](https://zenodo.org/badge/latestdoi/111421140)
+
+
+
 Requires: Python 3
 
 ###autocor.py
