@@ -1,12 +1,12 @@
 # autocorrelation
-Python script for auto-correlations in expression in a genome at different lags
+Python script for computing auto-correlations in expression in a genome at different lags
 
 To cite:
 [![DOI](https://zenodo.org/badge/111421140.svg)](https://zenodo.org/badge/latestdoi/111421140)
 
 
 
-Requires: Python 3
+Requires: Python 3, python package statistics, pandas, numpy
 
 ###autocor.py
 
@@ -24,6 +24,6 @@ Optional arguments:
 --max_lag
 --spearman
 
-Input file --infile:  File with 2 columns: first column containing coordinates, and second column containing values at co-ordinate.
-Output: 
-File with autocorrelations in first column and lag in second column
+Input file:  File with 2 columns: first column containing coordinates, and second column containing values at co-ordinate. We assume that this is a circular genome, and the program wraps around the end position while calculating correlations for any particular lag value.
+
+Output: File with autocorrelations in first column and lag in second column
